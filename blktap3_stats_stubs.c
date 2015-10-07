@@ -28,7 +28,7 @@
 #include <caml/fail.h>
 #include <caml/unixsupport.h>
 
-
+/* Fix the new stats layout. Update this function */
 CAMLprim value stub_get_blktap3_stats(value filename)
 {
 
@@ -44,7 +44,6 @@ CAMLprim value stub_get_blktap3_stats(value filename)
 	if (fread(&c_stats, sizeof(struct blkback_stats), 1, c_fd) < 1) uerror("fread", Nothing);
 
 	stats = caml_alloc_tuple(14);
-
 	Store_field(stats, 0, caml_copy_int64((int64) c_stats.st_ds_req));
 	Store_field(stats, 1, caml_copy_int64((int64) c_stats.st_f_req));
 	Store_field(stats, 2, caml_copy_int64((int64) c_stats.st_oo_req));

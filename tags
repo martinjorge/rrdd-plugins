@@ -1,0 +1,151 @@
+!	rrdp_squeezed.ml	/^					current_memory_values := IntMap.add domid value !current_memory_values$/;"	f
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+:	rrdp_iostat.ml	/^					~value:(Rrd.VT_Int64 count)$/;"	f
+:	rrdp_iostat.ml	/^				~value:(Rrd.VT_Float value.io_throughput_read_mb)$/;"	f
+:	rrdp_iostat.ml	/^				~value:(Rrd.VT_Float value.latency)$/;"	f
+:	rrdp_iostat.ml	/^	let make_ds ~owner ~name ~key_format (value : t) =$/;"	f
+:	rrdp_pm.ml	/^		~value:(Rrd.VT_Float percent) ~ty:Rrd.Gauge ~default:true$/;"	f
+:	rrdp_squeezed.ml	/^			~value:(Rrd.VT_Int64 memory_reclaimed) ~ty:(Rrd.Gauge)$/;"	f
+:	rrdp_xenpm.ml	/^		~value:(Rrd.VT_Float ((Int64.to_float derive_value) \/. 1000.)) $/;"	f
+Blktap3_stats	blktap3_stats.ml	1;"	M
+Blktap3_stats	blktap3_stats.mli	1;"	M
+Blktap3_stats_wrapper	rrdp_iostat.ml	1;"	M
+Client	rrdp_squeezed.ml	1;"	M	Module:Xs
+Cstate	rrdp_xenpm.ml	/^type cpu_state = Cstate | Pstate$/;"	C	type:cpu_state
+Process	rrdp_iostat.ml	1;"	M
+Process	rrdp_squeezed.ml	1;"	M
+Process	rrdp_xenpm.ml	1;"	M
+Pstate	rrdp_xenpm.ml	/^type cpu_state = Cstate | Pstate$/;"	C	type:cpu_state
+Rrdp_iostat	rrdp_iostat.ml	1;"	M
+Rrdp_pm	rrdp_pm.ml	1;"	M
+Rrdp_squeezed	rrdp_squeezed.ml	1;"	M
+Rrdp_xenpm	rrdp_xenpm.ml	1;"	M
+Stat	rrdp_iostat.ml	1;"	M
+Stats_value	rrdp_iostat.ml	1;"	M
+TARGETS	Makefile	/^TARGETS = rrdp_iostat \\$/;"	m
+Watcher	rrdp_squeezed.ml	1;"	M
+Xs	rrdp_squeezed.ml	1;"	M
+appeared_pids	rrdp_iostat.ml	/^			let appeared_pids    = List.set_difference pid_and_minor_to_sr_and_vdi !previous_map in$/;"	v
+avgqu_sz	rrdp_iostat.ml	/^				let avgqu_sz = to_float ((s3.st_rd_sum_usecs ++ s3.st_wr_sum_usecs) -- (last_s3.st_rd_sum_usecs ++ last_s3.st_wr_sum_usecs)) \/. 1000_000.0 in$/;"	v
+avgqu_sz	rrdp_iostat.ml	/^			avgqu_sz : float;$/;"	r	type:t
+blktap3_stats	blktap3_stats.ml	/^type blktap3_stats = {$/;"	t
+blktap3_stats	blktap3_stats.mli	/^type blktap3_stats = {$/;"	t
+client	rrdp_squeezed.ml	/^	let client = ref None$/;"	v	Module:Xs
+cmdstring	rrdp_iostat.ml	/^		let cmdstring = Printf.sprintf "\/usr\/bin\/iostat -x %s 1 2" dev_str in (* 2 iterations; 1 second between them *)$/;"	v
+cpu_pres	rrdp_pm.ml	/^	let cpu_pres =$/;"	v
+cpu_pres_metrics	rrdp_pm.ml	/^	let cpu_pres_metrics =$/;"	v
+cpu_pres_prop	rrdp_pm.ml	/^	let cpu_pres_prop = List.map prop_fun cpu_pres in$/;"	v
+cpu_pstates	rrdp_pm.ml	/^	let cpu_pstates = List.range 0 nr_cpu in$/;"	v
+cpu_pstates	rrdp_pm.ml	/^	let cpu_pstates =$/;"	v
+cpu_state	rrdp_xenpm.ml	/^type cpu_state = Cstate | Pstate$/;"	t
+data_sources_iostats	rrdp_iostat.ml	/^	let data_sources_iostats = List.map ($/;"	v
+data_sources_low_mem_mode	rrdp_iostat.ml	/^	let data_sources_low_mem_mode =$/;"	v
+data_sources_stats	rrdp_iostat.ml	/^	let data_sources_stats = List.map ($/;"	v
+data_sources_vm_stats	rrdp_iostat.ml	/^	let data_sources_vm_stats = List.flatten ($/;"	v
+dev_str	rrdp_iostat.ml	/^		let dev_str = String.concat " " (List.map (fun dev -> Printf.sprintf "-d %s" dev) devs) in$/;"	v
+disappeared_pids	rrdp_iostat.ml	/^			let disappeared_pids = List.set_difference !previous_map pid_and_minor_to_sr_and_vdi in$/;"	v
+domUs	rrdp_iostat.ml	/^	let domUs = with_xc get_running_domUs in$/;"	v
+domain_appeared	rrdp_squeezed.ml	/^	let domain_appeared _ _ = ()$/;"	v	function:!
+domain_disappeared	rrdp_squeezed.ml	/^	let domain_disappeared _ _ = ()$/;"	v	function:!
+domids	rrdp_squeezed.ml	/^	let domids = with_xc get_running_domains in$/;"	v
+empty	rrdp_iostat.ml	/^	let empty =$/;"	v
+exec_tap_ctl	rrdp_iostat.ml	/^let exec_tap_ctl () =$/;"	v	Module:Stat
+found_running_domain	rrdp_squeezed.ml	/^	let found_running_domain _ _ = ()$/;"	v	function:!
+gen_pm_ds	rrdp_xenpm.ml	/^let gen_pm_ds state cpu_id state_id (derive_value:int64) =$/;"	v
+generate_squeezed_dss	rrdp_squeezed.ml	/^let generate_squeezed_dss () =$/;"	v
+get_blktap3_stats	blktap3_stats.mli	/^val get_blktap3_stats: filename:string -> blktap3_stats$/;"	v
+get_client	rrdp_squeezed.ml	/^	let get_client () =$/;"	v
+get_datas	rrdp_squeezed.ml	/^let get_datas () =$/;"	v
+get_running_domUs	rrdp_iostat.ml	/^let get_running_domUs xc =$/;"	v
+get_running_domains	rrdp_squeezed.ml	/^let get_running_domains xc =$/;"	v
+get_squeezed_data	rrdp_squeezed.ml	/^let get_squeezed_data domid =$/;"	v
+get_sr_to_stats_values	rrdp_iostat.ml	/^	let get_sr_to_stats_values ~stats_values ~sum_fun =$/;"	v
+get_sr_vdi_to_stats_fun	rrdp_iostat.ml	/^let get_sr_vdi_to_stats_fun ~f () =$/;"	v
+get_stats_blktap3_by_vdi	rrdp_iostat.ml	/^	let get_stats_blktap3_by_vdi vdi =$/;"	v
+get_unsafe_dev	rrdp_iostat.ml	/^	let get_unsafe_dev (dev : string) : t =$/;"	v	Module:Stat
+get_vdi_to_vm_map	rrdp_iostat.ml	/^let get_vdi_to_vm_map () = !vdi_to_vm_map$/;"	v
+inflight	rrdp_iostat.ml	/^			inflight : int64;$/;"	r	type:Stats_value/t
+io_errors	blktap3_stats.ml	/^	io_errors : int64;$/;"	r	type:blktap3_stats
+io_throughput_read_mb	rrdp_iostat.ml	/^			io_throughput_read_mb : float;$/;"	r	type:Stats_value/t
+io_throughput_write_mb	rrdp_iostat.ml	/^			io_throughput_write_mb : float;$/;"	r	type:Stats_value/t
+iops_read	rrdp_iostat.ml	/^			iops_read : int64;$/;"	r	type:Stats_value/t
+iops_write	rrdp_iostat.ml	/^			iops_write : int64;$/;"	r	type:Stats_value/t
+iostats_get	rrdp_iostat.ml	/^				let iostats_get = List.nth iostats in$/;"	v
+iowait	rrdp_iostat.ml	/^			iowait : float;$/;"	r	type:Stats_value/t
+last_s3	rrdp_iostat.ml	/^				let last_s3 = match last_stats_blktap3 with$/;"	v
+last_stats_blktap3	rrdp_iostat.ml	/^					let last_stats_blktap3 = match !domid_devid_to_last_stats_blktap3 with$/;"	v
+latency	rrdp_iostat.ml	/^			latency : float;$/;"	r	type:t
+make	rrdp_iostat.ml	/^	let make iostats last_iostats stats_blktap3 last_stats_blktap3 : t =$/;"	v
+make	rrdp_iostat.ml	/^	let make stats last_stats stats_blktap3 last_stats_blktap3 : t =$/;"	v
+minor	rrdp_iostat.ml	/^    List.filter (fun tdx -> let minor = minor_of_tdX_unsafe tdx in$/;"	v
+minor_of_tdX_unsafe	rrdp_iostat.ml	/^let minor_of_tdX_unsafe tdX =$/;"	v
+name	rrdp_iostat.ml	/^module Process = Process(struct let name="xcp-rrdd-iostat" end)$/;"	v
+name	rrdp_squeezed.ml	/^module Process = Process(struct let name="xcp-rrdd-squeezed" end)$/;"	v
+name	rrdp_xenpm.ml	/^module Process = Process(struct let name = "xcp-rrdd-xenpm" end)$/;"	v
+parsing_section	rrdp_iostat.ml	/^		let parsing_section = ref 0 in$/;"	v
+pid_and_minor_to_sr_and_vdi	rrdp_iostat.ml	/^	let pid_and_minor_to_sr_and_vdi = Utils.exec_cmd (module Process.D) ~cmdstring:tap_ctl ~f:process_line in$/;"	v
+pids_to_string	rrdp_iostat.ml	/^				let pids_to_string pids = pids |> List.map (fun (pid, (_, (_, vdi))) -> Printf.sprintf "%d (%s)" pid vdi) |> String.concat "; " in$/;"	v
+process_line	rrdp_iostat.ml	/^		let process_line str =$/;"	v
+process_line	rrdp_iostat.ml	/^        let process_line str =$/;"	v
+prop_fun	rrdp_pm.ml	/^	let prop_fun xstat_array =$/;"	v
+read_reqs_completed	blktap3_stats.ml	/^	read_reqs_completed : int64;$/;"	r	type:blktap3_stats
+read_reqs_submitted	blktap3_stats.ml	/^	read_reqs_submitted : int64;$/;"	r	type:blktap3_stats
+read_sectors	blktap3_stats.ml	/^	read_sectors : int64;$/;"	r	type:blktap3_stats
+read_total_ticks	blktap3_stats.ml	/^	read_total_ticks : int64;$/;"	r	type:blktap3_stats
+remove_vdi_from_map	rrdp_iostat.ml	/^let remove_vdi_from_map vdi =$/;"	v
+s3_count	rrdp_iostat.ml	/^				let s3_count = (s3.st_rd_cnt ++ s3.st_wr_cnt) -- (last_s3.st_rd_cnt ++ last_s3.st_wr_cnt) in$/;"	v
+s3_latency_average	rrdp_iostat.ml	/^				let s3_latency_average = if s3_count = 0L then 0. else to_float s3_usecs \/. to_float s3_count \/. 1000.0 in$/;"	v
+s3_usecs	rrdp_iostat.ml	/^				let s3_usecs = (s3.st_rd_sum_usecs ++ s3.st_wr_sum_usecs) -- (last_s3.st_rd_sum_usecs ++ last_s3.st_wr_sum_usecs) in$/;"	v
+shared_page_count	rrdp_iostat.ml	/^	let shared_page_count = 2048 in$/;"	v
+sr	rrdp_iostat.ml	/^					let sr = xs.Xs.read path in$/;"	v
+sr	rrdp_iostat.ml	/^                let (sr, vdi) = Hashtbl.find phypath_to_sr_vdi phypath in$/;"	v
+sr_to_iostats_values	rrdp_iostat.ml	/^	let sr_to_iostats_values = get_sr_to_stats_values ~stats_values:sr_vdi_to_iostats_values ~sum_fun:Iostats_value.sumup in$/;"	v
+sr_to_stats_values	rrdp_iostat.ml	/^	let sr_to_stats_values   = get_sr_to_stats_values ~stats_values:sr_vdi_to_stats_values   ~sum_fun:Stats_value.sumup   in$/;"	v
+sr_vdi_to_iostats	rrdp_iostat.ml	/^	let sr_vdi_to_iostats = get_sr_vdi_to_iostats () in$/;"	v
+sr_vdi_to_iostats_values	rrdp_iostat.ml	/^	let sr_vdi_to_iostats_values =$/;"	v
+sr_vdi_to_stats	rrdp_iostat.ml	/^	let sr_vdi_to_stats   = get_sr_vdi_to_stats   () in$/;"	v
+sr_vdi_to_stats_values	rrdp_iostat.ml	/^	let sr_vdi_to_stats_values =$/;"	v
+st_ds_req	blktap3_stats.mli	/^	st_ds_req : int64;$/;"	r	type:blktap3_stats
+st_f_req	blktap3_stats.mli	/^	st_f_req  : int64;$/;"	r	type:blktap3_stats
+st_mem_mode	blktap3_stats.mli	/^	st_mem_mode : bool;$/;"	r	type:blktap3_stats
+st_oo_req	blktap3_stats.mli	/^	st_oo_req : int64;$/;"	r	type:blktap3_stats
+st_rd_cnt	blktap3_stats.mli	/^	st_rd_cnt : int64;$/;"	r	type:blktap3_stats
+st_rd_max_usecs	blktap3_stats.mli	/^	st_rd_max_usecs : int64;$/;"	r	type:blktap3_stats
+st_rd_req	blktap3_stats.mli	/^	st_rd_req : int64;$/;"	r	type:blktap3_stats
+st_rd_sect	blktap3_stats.mli	/^	st_rd_sect: int64;$/;"	r	type:blktap3_stats
+st_rd_sum_usecs	blktap3_stats.mli	/^	st_rd_sum_usecs : int64;$/;"	r	type:blktap3_stats
+st_wr_cnt	blktap3_stats.mli	/^	st_wr_cnt : int64;$/;"	r	type:blktap3_stats
+st_wr_max_usecs	blktap3_stats.mli	/^	st_wr_max_usecs : int64;$/;"	r	type:blktap3_stats
+st_wr_req	blktap3_stats.mli	/^	st_wr_req : int64;$/;"	r	type:blktap3_stats
+st_wr_sect	blktap3_stats.mli	/^	st_wr_sect: int64;$/;"	r	type:blktap3_stats
+st_wr_sum_usecs	blktap3_stats.mli	/^	st_wr_sum_usecs : int64;$/;"	r	type:blktap3_stats
+stats_blktap3	rrdp_iostat.ml	/^					let stats_blktap3 = find_blktap3 domid_devid_to_stats_blktap3 in$/;"	v
+stats_diff_get	rrdp_iostat.ml	/^				let stats_diff_get n =$/;"	v
+stats_get	rrdp_iostat.ml	/^				let stats_get = List.nth stats in$/;"	v
+stub_get_blktap3_stats	blktap3_stats_stubs.c	/^CAMLprim value stub_get_blktap3_stats(value filename)$/;"	f
+sum_int64_array	rrdp_pm.ml	/^let sum_int64_array (a: int64 array) =$/;"	v
+sumup	rrdp_iostat.ml	/^	let sumup (values : t list) : t =$/;"	v
+t	rrdp_iostat.ml	/^	type t = int64 list (* \/sys\/block\/tdX\/stats @ \/sys\/block\/tdX\/inflight @ [read bytes; write bytes] *)$/;"	t	Module:Stat
+t	rrdp_iostat.ml	/^	type t =$/;"	t
+t	rrdp_iostat.ml	/^	type t =$/;"	t	Module:Stats_value
+to_hashtbl	rrdp_iostat.ml	/^	let to_hashtbl sr_vdi_to_stats =$/;"	v
+uid	rrdp_pm.ml	/^let uid = "pm"$/;"	v
+unmanaged_domain	rrdp_squeezed.ml	/^	let unmanaged_domain _ _ = false$/;"	v	function:!
+update_vdi_to_vm_map	rrdp_iostat.ml	/^let update_vdi_to_vm_map () =$/;"	v
+values	rrdp_iostat.ml	/^				let values = Hashtbl.find dev_values_map dev in$/;"	v
+vdi_to_vm	rrdp_iostat.ml	/^	let vdi_to_vm = get_vdi_to_vm_map () in$/;"	v
+vdi_to_vm_map	rrdp_iostat.ml	/^let vdi_to_vm_map : (string * (string * string * int)) list ref = ref []$/;"	v
+version	rrdp_pm.ml	/^	let version = (with_xc (Xenctrl.pm_get_max_cx) 0) in$/;"	v
+watch_fired	rrdp_squeezed.ml	/^	let watch_fired xc path domains watches =$/;"	v
+with_xc	rrdp_iostat.ml	/^let with_xc f = Xenctrl.with_intf f$/;"	v
+with_xc	rrdp_pm.ml	/^let with_xc f = Xenctrl.with_intf f$/;"	v
+with_xc	rrdp_squeezed.ml	/^let with_xc f = Xenctrl.with_intf f$/;"	v
+write_reqs_completed	blktap3_stats.ml	/^	write_reqs_completed : int64;$/;"	r	type:blktap3_stats
+write_reqs_submitted	blktap3_stats.ml	/^	write_reqs_submitted : int64;$/;"	r	type:blktap3_stats
+write_total_ticks	blktap3_stats.ml	/^	write_total_ticks : int64;$/;"	r	type:blktap3_stats
+xenpm_bin	rrdp_xenpm.ml	/^let xenpm_bin = "\/usr\/sbin\/xenpm"$/;"	v

@@ -19,7 +19,7 @@
 
 (** Define an equivalent blktap3 statistics record *)
 type blktap3_stats = {
-	st_ds_req : int64;
+	(*st_ds_req : int64;
 	st_f_req  : int64;
 	st_oo_req : int64;
 	st_rd_req : int64;
@@ -32,7 +32,16 @@ type blktap3_stats = {
 	st_wr_sect: int64;
 	st_wr_sum_usecs : int64;
 	st_wr_max_usecs : int64;
-	st_mem_mode : bool;
+	st_mem_mode : bool;*)
+	(** New stats struct **)
+	read_reqs_submitted : int64;
+	read_reqs_completed : int64;
+	read_sectors : int64;
+	read_total_ticks : int64;
+	write_reqs_submitted : int64;
+	write_reqs_completed : int64;
+	write_total_ticks : int64;
+	io_errors : int64;
 }
 
 (** Obtain a blktap3 statistics record using the stubs *)

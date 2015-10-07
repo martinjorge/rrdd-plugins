@@ -341,11 +341,11 @@ module Blktap3_stats_wrapper = struct
 				None
 		in
 		let shm_dirs = Array.to_list (Sys.readdir shm_devices_dir) in
-		let shm_vbds = List.filter (fun s -> String.startswith "vbd3-" s) shm_dirs in
+		let shm_vbds = List.filter (fun s -> String.startswith "vbd3-" s) shm_dirs in //TODO: Update vbd3 starts with
 		List.fold_left (fun acc vbd ->
 			match read_raw_blktap3_stats vbd with
 			| Some stat ->
-				let domid, devid = Scanf.sscanf vbd "vbd3-%d-%d" (fun id devid -> (id, devid)) in
+				let domid, devid = Scanf.sscanf vbd "vbd3-%d-%d" (fun id devid -> (id, devid)) in //TODO: Change path
 				((domid, devid), stat) :: acc
 			| None -> acc
 		) [] shm_vbds
